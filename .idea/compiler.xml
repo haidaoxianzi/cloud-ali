@@ -6,8 +6,9 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="NacosConsumer9101" />
+        <module name="NacosConfig7777" />
         <module name="NacosConsumer9102" />
+        <module name="NacosConsumer9101" />
         <module name="NacosProvider9001" />
       </profile>
     </annotationProcessing>

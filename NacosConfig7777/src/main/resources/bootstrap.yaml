@@ -1,0 +1,23 @@
+server:
+  port: 7777
+spring:
+  application:
+    name: nacos-config-client
+  cloud:
+    nacos:
+      discovery:
+        server-addr: localhost:8848
+      config:
+        server-addr: localhost:8848
+        file-extension: yaml
+#        group: SEARCH
+#        prefix: nacos-config-client-search
+        namespace: 0bd92cef-f007-4083-9cff-d5be665bfcb0
+        extension-configs[0]:
+          data-id: item-redis-prod.yaml
+          group: ITEM
+          refresh: true
+        extension-configs[1]:
+         data-id: item-mybatis-prod.yaml
+         group: ITEM
+         refresh: true
