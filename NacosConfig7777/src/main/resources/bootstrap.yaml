@@ -5,10 +5,10 @@ spring:
     name: nacos-config-client
   cloud:
     nacos:
-      discovery:
-        server-addr: localhost:8848
-      config:
-        server-addr: localhost:8848
+      discovery: #注册中心
+        server-addr: 192.168.0.102:80
+      config:    #配置中心
+        server-addr: 192.168.0.102:80
         file-extension: yaml
 #        group: SEARCH
 #        prefix: nacos-config-client-search

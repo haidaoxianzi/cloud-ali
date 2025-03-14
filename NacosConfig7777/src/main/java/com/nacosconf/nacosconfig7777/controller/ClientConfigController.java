@@ -13,6 +13,9 @@ import org.springframework.web.bind.annotation.RestController;
 @RefreshScope
 @RestController
 public class ClientConfigController {
+    @Value("${config.info}")
+    private String confInfo;
+
     @Value("${config.mybatisInfo}")
     private String mybatisInfo;
 
@@ -29,11 +32,8 @@ public class ClientConfigController {
         return redisInfo;
     }
 
-
-    @Value("${config.info}")
-    private String configInfo;
     @GetMapping("/configInfo")
     public String configInfo() {
-        return configInfo;
+        return confInfo;
     }
 }
