@@ -7,11 +7,11 @@
         <artifactId>cloud-ali</artifactId>
         <version>0.0.1-SNAPSHOT</version>
     </parent>
-    <groupId>com.nacosconf</groupId>
-    <artifactId>NacosConfig7777</artifactId>
+    <groupId>com.nancy</groupId>
+    <artifactId>gateway9999</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>NacosConfig7777</name>
-    <description>NacosConfig7777</description>
+    <name>gateway9999</name>
+    <description>gateway9999</description>
     <properties>
         <java.version>11</java.version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -19,34 +19,30 @@
         <spring-boot.version>2.4.2</spring-boot.version>
     </properties>
     <dependencies>
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-web</artifactId>
-        </dependency>
 
-        <dependency>
-            <groupId>org.projectlombok</groupId>
-            <artifactId>lombok</artifactId>
-            <optional>true</optional>
-
-        </dependency>
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-test</artifactId>
             <scope>test</scope>
         </dependency>
+        <!--添加网关依赖-->
         <dependency>
-            <groupId> com.alibaba.cloud </groupId>
-            <artifactId> spring-cloud-starter-alibaba-nacos-config </artifactId>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-gateway</artifactId>
         </dependency>
+        <!--添加Nacos依赖，需要Nacos作为注册中心存在-->
         <dependency>
             <groupId>com.alibaba.cloud</groupId>
             <artifactId>spring-cloud-starter-alibaba-nacos-discovery</artifactId>
         </dependency>
         <dependency>
-            <groupId>org.springframework.cloud</groupId>
-            <artifactId>spring-cloud-starter-bootstrap</artifactId>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <optional>true</optional>
+            <version>1.18.36</version>
         </dependency>
+
+
     </dependencies>
     <dependencyManagement>
         <dependencies>
@@ -77,7 +73,7 @@
                 <artifactId>spring-boot-maven-plugin</artifactId>
                 <version>${spring-boot.version}</version>
                 <configuration>
-                    <mainClass>com.nacosconf.nacosconfig7777.NacosConfig7777Application</mainClass>
+                    <mainClass>com.nancy.gateway9999.Gateway9999Application</mainClass>
                     <skip>true</skip>
                 </configuration>
                 <executions>

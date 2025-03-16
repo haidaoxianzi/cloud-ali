@@ -13,6 +13,7 @@
         <module>NacosConsumer9101</module>
         <module>NacosConsumer9102</module>
         <module>NacosConfig7777</module>
+        <module>gateway9999</module>
     </modules>
     <properties>
         <java.version>11</java.version>
@@ -23,10 +24,10 @@
         <spring-cloud.version>2020.0.1</spring-cloud.version>
     </properties>
     <dependencies>
-        <dependency>
+       <!-- <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-web</artifactId>
-        </dependency>
+        </dependency>-->
 
         <dependency>
             <groupId>org.springframework.boot</groupId>

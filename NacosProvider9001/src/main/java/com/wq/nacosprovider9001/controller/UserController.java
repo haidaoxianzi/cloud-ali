@@ -16,6 +16,6 @@ public class UserController {
     @GetMapping("/hello")
     public String hello() {
         log.info("........Nacos Provider run...................");
-        return "hello Nancy";
+        return "hello Nancy...";
     }
 }
