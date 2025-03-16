@@ -10,10 +10,10 @@ import org.springframework.context.annotation.Configuration;
  * @Date: 2025-03-16
  * @Description:
  */
-@Configuration
+//@Configuration
 public class GatewayConfig {
 
-    @Bean
+//    @Bean
     public RouteLocator customerRouteLocator(RouteLocatorBuilder builder) {
         //获取构建多个路由的routes
         RouteLocatorBuilder.Builder routes = builder.routes();
