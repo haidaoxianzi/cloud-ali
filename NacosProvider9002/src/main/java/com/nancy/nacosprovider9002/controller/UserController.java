@@ -1,4 +1,5 @@
-package com.wq.nacosprovider9001.controller;
+package com.nancy.nacosprovider9002.controller;
+
 
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -16,6 +17,6 @@ public class UserController {
     @GetMapping("/hello")
     public String hello() {
         log.info("........Nacos Provider run...................");
-        return "9001-----hello Nancy...";
+        return "9002-----hello Nancy...";
     }
 }

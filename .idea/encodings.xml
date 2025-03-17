@@ -9,6 +9,8 @@
     <file url="file://$PROJECT_DIR$/NacosConsumer9102/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/NacosProvider9001/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/NacosProvider9001/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/NacosProvider9002/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/NacosProvider9002/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/gateway9999/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/gateway9999/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/main/java" charset="UTF-8" />

@@ -9,6 +9,7 @@
         <module name="NacosConfig7777" />
         <module name="NacosConsumer9102" />
         <module name="gateway9999" />
+        <module name="NacosProvider9002" />
         <module name="NacosConsumer9101" />
         <module name="NacosProvider9001" />
       </profile>

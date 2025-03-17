@@ -11,13 +11,6 @@ spring:
       discovery:
         locator:
           enabled: true # 开启注册中心路由功能
-      routes:
-        - id: nacos-provider  # 路由的id 自定义
-          uri: http://192.168.0.103:9001/nacos-provider
-          predicates: # 断言
-            - Path=/nacos-provider/**
-            # 请求 http://192.168.0.103:9999/nacos-provider/hello
-            # 路由转发为 http://192.168.0.103:9001/nacos-provider/hello
 
 management:
   endpoint:

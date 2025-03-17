@@ -3,6 +3,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/NacosConfig7777/NacosConfig7777.iml" filepath="$PROJECT_DIR$/NacosConfig7777/NacosConfig7777.iml" />
+      <module fileurl="file://$PROJECT_DIR$/cloud-ali.iml" filepath="$PROJECT_DIR$/cloud-ali.iml" />
     </modules>
   </component>
 </project>
