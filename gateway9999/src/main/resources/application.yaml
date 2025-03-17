@@ -16,7 +16,8 @@ spring:
           uri: lb://nacos-provider #路由到注册中心，服务为nacos-provider的服务
           predicates:
             - Path=/nancy/** # 路径匹配，则进行路由
-
+          filters:
+            - StripPrefix=1 # 截取掉断言路径的第一部分
 management:
   endpoint:
     web:
