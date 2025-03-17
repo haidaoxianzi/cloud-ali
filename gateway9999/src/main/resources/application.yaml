@@ -10,11 +10,17 @@ spring:
     gateway:
       discovery:
         locator:
-          enabled: true # 开启注册中心路由功能
+          enabled: false # 开启注册中心路由功能
+      routes:
+        - id: nacos-provider
+          uri: lb://nacos-provider #路由到注册中心，服务为nacos-provider的服务
+          predicates:
+            - Path=/nancy/** # 路径匹配，则进行路由
 
 management:
   endpoint:
     web:
       exposure:
         include: '*'
+
 
