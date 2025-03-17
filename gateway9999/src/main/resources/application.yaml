@@ -16,6 +16,8 @@ spring:
           uri: lb://nacos-provider #路由到注册中心，服务为nacos-provider的服务
           predicates:
             - Path=/nancy/** # 路径匹配，则进行路由
+            #- After=2025-03-16T21:40:10.529+08:00[Asia/Shanghai]
+            - Cookie=username,[a-z]+ # 匹配Cookie的key和value（正则表达式）
           filters:
             - StripPrefix=1 # 截取掉断言路径的第一部分
 management:
