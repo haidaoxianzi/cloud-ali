@@ -21,10 +21,13 @@ spring:
             #- Header=X-Request-Id,\d+ #表示数字
             #- Host=**.nancy.com #匹配当前的主机地址发出的请求
             #- Method=POST,GET # 匹配GET请求或者POST请求
-            - Query=id,.+ # 匹配请求参数，这里如果需要匹配多个参数，可以写多个Query
+            #- Query=id,.+ # 匹配请求参数，这里如果需要匹配多个参数，可以写多个Query
 
           filters:
             - StripPrefix=1 # 截取掉断言路径的第一部分
+            - AddRequestHeader=X-Request-red, blue
+            - AddRequestParameter=are_you_OK, year
+            - AddResponseHeader=X-Response-Red, Blue
 management:
   endpoint:
     web:
