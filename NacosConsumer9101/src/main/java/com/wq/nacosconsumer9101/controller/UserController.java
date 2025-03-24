@@ -90,8 +90,8 @@ public class UserController {
     public String rongDuan(Integer id) throws InterruptedException {
         log.info("------消费者接口执行----consumer--9101----sentinelDemo1");
         Thread.sleep(500);
-        if(id != null && id>66){
-           throw  new RuntimeException("异常比例测试");
+        if (id != null && id > 66) {
+            throw new RuntimeException("异常比例测试");
         }
         return "ok";
     }
