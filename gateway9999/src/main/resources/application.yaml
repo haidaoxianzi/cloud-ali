@@ -12,7 +12,7 @@ spring:
         locator:
           enabled: false # 开启注册中心路由功能
       routes:
-        - id: nacos-provider
+        - id: nacos-provider-router
           uri: lb://nacos-provider #路由到注册中心，服务为nacos-provider的服务
           predicates:
             - Path=/nancy/** # 路径匹配，则进行路由
@@ -28,6 +28,14 @@ spring:
             - AddRequestHeader=X-Request-red, blue
             - AddRequestParameter=are_you_OK, year
             - AddResponseHeader=X-Response-Red, Blue
+
+        - id: nacos-consumer-router
+          uri: lb://nacos-consumer #路由到注册中心，服务为nacos-consumer的服务
+          predicates:
+            - Path=/nancyCall/** # 路径匹配，则进行路由
+          filters:
+            - StripPrefix=1 # 截取掉断言路径的第一部分
+
 management:
   endpoint:
     web:
