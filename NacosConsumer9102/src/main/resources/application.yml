@@ -6,7 +6,12 @@ spring:
   cloud:
     nacos:
       discovery:
-        server-addr: 192.168.0.103:80
+        server-addr: 172.18.101.160:80
+    sentinel:
+      transport:
+        dashboard: localhost:8080   # 配置sentinel dashboard地址
+        port: 8720    # 默认8719端口，假如被占用会自动从8719+1，直到找到未被占用的端口
+      web-context-unify: false
 
 
 
@@ -17,3 +22,7 @@ management:
         include:'*'
 service-url:
   nacos-user-service: http://nacos-provider
+
+feign:
+  sentinel:
+    enabled: true

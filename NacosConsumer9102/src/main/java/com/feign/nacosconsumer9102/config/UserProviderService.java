@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.GetMapping;
  * @Date: 2025-03-10
  * @Description:
  */
-@FeignClient("nacos-provider")
+@FeignClient(value="nacos-provider",fallback = UserProviderServiceImpl.class)
 public interface UserProviderService {
     @GetMapping("/hello")
     public String hello();

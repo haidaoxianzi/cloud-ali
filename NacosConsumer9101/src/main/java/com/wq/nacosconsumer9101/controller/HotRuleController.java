@@ -43,7 +43,6 @@ public class HotRuleController {
     public String handlerHotKey(String hotParam1, String hotParam2, String hotParam3, BlockException blockException) throws InterruptedException {
 
         log.info("-----handlerHotKey---blockException");
-        blockException.printStackTrace();
         return "系统过于繁忙，请您稍后重试";
     }
 
@@ -69,6 +68,11 @@ public class HotRuleController {
             exceptionsToIgnore = {NullPointerException.class})//标注的异常会原样抛出
     public String helloConsumer() {
         log.info("消费者接口9101基于ribbon ，通过restTemplate 做的远程服务调用,调远程服务9001资源：/hello");
+        try {
+            Thread.sleep(200);
+        } catch (InterruptedException e) {
+            throw new RuntimeException(e);
+        }
         return restTemplate.getForObject(serverUrl + "/hello", String.class);
     }
 
@@ -76,7 +80,7 @@ public class HotRuleController {
      * 保证方法签名基本保持一致，但是要添加异常类型参数
      */
     public String fallBackHandler(Throwable throwable) {
-        return "返回拖底数据";
+        return "底层服务没通，触发此熔断降级：返回拖底数据";
     }
 
     /**
@@ -87,4 +91,19 @@ public class HotRuleController {
     }
 
 
+    /** sentinel流控规则配置，持久化到nacos
+     * 热点规则，案例1:基本配置测试
+     */
+    @GetMapping("/test1")
+    @SentinelResource(value = "test1", blockHandler = "flowLimitHandler")
+    public String test1() throws InterruptedException {
+        log.info("-----test1---");
+        Thread.sleep(100);
+        return "ok";
+    }
+
+    public String flowLimitHandler(BlockException blockException)  {
+        log.info("-----flowLimitHandler--");
+        return "flowLimitHandler------系统过于繁忙，请您稍后重试";
+    }
 }
