@@ -7,7 +7,7 @@ spring:
     name: nacos-provider
   cloud:
     discovery:
-      server-addr: 172.18.101.160:80
+      server-addr: localhost:80
 
     sentinel:
       transport:

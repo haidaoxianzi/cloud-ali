@@ -1,7 +1,7 @@
 package com.feign.nacosconsumer9102.controller;
 
 import com.alibaba.csp.sentinel.annotation.SentinelResource;
-import com.feign.nacosconsumer9102.config.UserProviderService;
+import com.feign.nacosconsumer9102.outservice.UserProviderService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.web.bind.annotation.GetMapping;

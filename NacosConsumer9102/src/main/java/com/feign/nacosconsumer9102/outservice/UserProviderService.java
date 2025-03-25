@@ -1,4 +1,4 @@
-package com.feign.nacosconsumer9102.config;
+package com.feign.nacosconsumer9102.outservice;
 
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.web.bind.annotation.GetMapping;

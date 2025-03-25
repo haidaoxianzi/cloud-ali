@@ -1,4 +1,4 @@
-package com.feign.nacosconsumer9102.config;
+package com.feign.nacosconsumer9102.outservice;
 
 import org.springframework.stereotype.Service;
 
