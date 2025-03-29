@@ -31,4 +31,9 @@ public class UserController {
         return "test1";
     }
 
+    @GetMapping("/abTest")
+    @SentinelResource(value = "version-b")
+    public String versionB() throws InterruptedException {
+        return "version_B--9102";
+    }
 }

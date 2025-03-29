@@ -6,7 +6,7 @@ spring:
   cloud:
     nacos:
       discovery:
-        server-addr: 192.168.0.103:80
+        server-addr: 172.18.101.197:80
     gateway:
       discovery:
         locator:
@@ -32,7 +32,13 @@ spring:
         - id: nacos-consumer-router
           uri: lb://nacos-consumer #路由到注册中心，服务为nacos-consumer的服务
           predicates:
-            - Path=/nancyCall/** # 路径匹配，则进行路由
+            - Path=/testB/** # 路径匹配，则进行路由
+          filters:
+            - StripPrefix=1 # 截取掉断言路径的第一部分
+        - id: nacos-consumer-openfeign
+          uri: lb://nacos-consumer-openfeign #路由到注册中心，服务为nacos-consumer的服务
+          predicates:
+            - Path=/testA/** # 路径匹配，则进行路由
           filters:
             - StripPrefix=1 # 截取掉断言路径的第一部分
 

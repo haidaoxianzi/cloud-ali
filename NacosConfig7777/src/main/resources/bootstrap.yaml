@@ -6,9 +6,9 @@ spring:
   cloud:
     nacos:
       discovery: #注册中心
-        server-addr: 192.168.0.103:80
+        server-addr: 172.18.101.197:80
       config:    #配置中心
-        server-addr: 192.168.0.103:80
+        server-addr: 172.18.101.197:80
         file-extension: yaml
 #        group: SEARCH
 #        prefix: nacos-config-client-search

@@ -16,7 +16,7 @@ import reactor.core.publisher.Mono;
  * @Date: 2025-03-18
  * @Description:gateway自定义过滤器
  */
-@Component
+//@Component
 @Slf4j
 public class MyFilter implements Ordered, GlobalFilter {
     /*

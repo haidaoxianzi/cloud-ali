@@ -1,5 +1,6 @@
 package com.wq.nacosconsumer9101.controller;
 
+import com.alibaba.csp.sentinel.annotation.SentinelResource;
 import com.wq.nacosconsumer9101.service.CouponService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -96,4 +97,9 @@ public class UserController {
         return "ok";
     }
 
+    @GetMapping("/abTest")
+    @SentinelResource(value = "version_A")
+    public String versionB() throws InterruptedException {
+        return "version_A--9101";
+    }
 }

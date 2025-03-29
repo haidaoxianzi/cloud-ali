@@ -6,7 +6,7 @@ spring:
   cloud:
     nacos:
       discovery:
-        server-addr: localhost:80
+        server-addr: 172.18.101.197:80
     sentinel:
       transport:
         dashboard: localhost:8080   # 配置sentinel dashboard地址
