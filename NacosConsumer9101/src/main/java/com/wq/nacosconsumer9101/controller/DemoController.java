@@ -13,7 +13,15 @@ public class DemoController {
 
     @GetMapping("/testV1")
     public String testV1() {
-        return "testV1...";
+        return "test...API..V1...";
     }
+
+
+    @GetMapping("/testV2")
+    public String testV2() {
+        return "test...API..V2...";
+    }
+
+
 
 }

@@ -9,6 +9,8 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.client.RestTemplate;
 import java.util.Date;
+import java.util.concurrent.atomic.AtomicInteger;
+
 /**
  * @Auther: gina
  * @Date: 2025-03-10
@@ -97,9 +99,12 @@ public class UserController {
         return "ok";
     }
 
+  private static AtomicInteger a = new AtomicInteger(0);
+
     @GetMapping("/abTest")
     @SentinelResource(value = "version_A")
     public String versionB() throws InterruptedException {
+        log.info("端口9101 调用次数 " + a.incrementAndGet());
         return "version_A--9101";
     }
 }

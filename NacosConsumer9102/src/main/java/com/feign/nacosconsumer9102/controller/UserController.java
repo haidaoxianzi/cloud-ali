@@ -2,16 +2,20 @@ package com.feign.nacosconsumer9102.controller;
 
 import com.alibaba.csp.sentinel.annotation.SentinelResource;
 import com.feign.nacosconsumer9102.outservice.UserProviderService;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
+
+import java.util.concurrent.atomic.AtomicInteger;
 
 /**
  * @Auther: gina
  * @Date: 2025-03-10
  * @Description:
  */
+@Slf4j
 @RestController
 public class UserController {
 
@@ -31,9 +35,12 @@ public class UserController {
         return "test1";
     }
 
+  static  AtomicInteger a1=new AtomicInteger(0);
+
     @GetMapping("/abTest")
     @SentinelResource(value = "version-b")
     public String versionB() throws InterruptedException {
+        log.info("端口9102 调用次数 " + a1.incrementAndGet());
         return "version_B--9102";
     }
 }

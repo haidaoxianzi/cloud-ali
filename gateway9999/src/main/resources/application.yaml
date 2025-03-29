@@ -12,6 +12,23 @@ spring:
         locator:
           enabled: false # 开启注册中心路由功能
       routes:
+        # 配置流量分流权重
+        - id: nacos-consumer-router
+          uri: lb://nacos-consumer #路由到注册中心，服务为nacos-consumer的服务
+          predicates:
+            - Path=/testC/** # 路径匹配，则进行路由
+            - Weight=group1, 2
+          filters:
+            - StripPrefix=1 # 截取掉断言路径的第一部分
+
+        - id: nacos-consumer-openfeign
+          uri: lb://nacos-consumer-openfeign #路由到注册中心，服务为nacos-consumer的服务
+          predicates:
+            - Path=/testC/** # 路径匹配，则进行路由
+            - Weight=group1, 8
+          filters:
+            - StripPrefix=1 # 截取掉断言路径的第一部分
+
         - id: nacos-provider-router
           uri: lb://nacos-provider #路由到注册中心，服务为nacos-provider的服务
           predicates:
