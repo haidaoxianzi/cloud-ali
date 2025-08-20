@@ -1,5 +1,6 @@
 package com.wq.nacosconsumer9101.controller;
 
+import com.alibaba.csp.sentinel.EntryType;
 import com.alibaba.csp.sentinel.annotation.SentinelResource;
 import com.alibaba.csp.sentinel.slots.block.BlockException;
 import com.wq.nacosconsumer9101.handler.CustomSentinelHandler;
@@ -40,10 +41,11 @@ public class HotRuleController {
         return "ok";
     }
 
+
     public String handlerHotKey(String hotParam1, String hotParam2, String hotParam3, BlockException blockException) throws InterruptedException {
 
         log.info("-----handlerHotKey---blockException");
-        return "系统过于繁忙，请您稍后重试";
+        return "系统繁忙，请稍后重试";
     }
 
     /**
@@ -51,7 +53,7 @@ public class HotRuleController {
      * 自定义通用限流处理
      */
     @GetMapping("/customBlockHandleTest")
-    @SentinelResource(value = "customBlockHandleTest", blockHandlerClass = CustomSentinelHandler.class, blockHandler = "handlerException1")
+    @SentinelResource(value = "customBlockHandleTest", blockHandlerClass = CustomSentinelHandler.class, blockHandler = "handlerException1" )
     public String customBlockHandleTest() throws InterruptedException {
         log.info("------自定义通用限流处理 测试");
         Thread.sleep(200);

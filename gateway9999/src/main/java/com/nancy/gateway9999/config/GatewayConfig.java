@@ -18,7 +18,7 @@ public class GatewayConfig {
         //获取构建多个路由的routes
         RouteLocatorBuilder.Builder routes = builder.routes();
         routes.route("nacos-provider1", r -> r.path("/nacos-provider/**")
-                .uri("http://172.18.101.197:9001/nacos-provider"));
+                .uri("http://192.168.0.101:9001/nacos-provider"));
         return routes.build();
     }
 }

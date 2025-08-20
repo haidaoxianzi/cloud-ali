@@ -20,7 +20,7 @@ import java.util.concurrent.atomic.AtomicInteger;
 public class UserController {
 
     @Qualifier(value = "userProviderService")
-    @Autowired
+    @AutowiredRR
     private UserProviderService userProviderService;
 
     @SentinelResource(value = "helloOpenFeign")

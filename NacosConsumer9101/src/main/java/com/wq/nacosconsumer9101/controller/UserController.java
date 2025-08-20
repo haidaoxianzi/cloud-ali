@@ -39,7 +39,7 @@ public class UserController {
     @GetMapping("/sentinelDemo")
     public String sentinelDemo() throws InterruptedException {
         log.info("------消费者接口执行----consumer--9101----sentinelDemo1");
-        Thread.sleep(500);
+        Thread.sleep(300);
         return "ok";
     }
 
@@ -49,8 +49,8 @@ public class UserController {
     @GetMapping("/payOrder")
     public String payOrder() throws InterruptedException {
         log.info("9101-支付接口---支付接口设置阈值");
-        couponService.couponList();
-        Thread.sleep(200);
+      //  couponService.couponList();
+        Thread.sleep(100);
         return "ok";
     }
 
@@ -61,8 +61,8 @@ public class UserController {
     @GetMapping("/createOrder")
     public String createOrder() throws InterruptedException {
         log.info("9101-创单接口---达到支付接口的阈值后，关联的创单接口会被限流");
-        couponService.couponList();
-        Thread.sleep(300);
+       // couponService.couponList();
+        Thread.sleep(100);
         return "ok";
     }
 
@@ -80,9 +80,9 @@ public class UserController {
      * 流控规则：流控模式为排队等待
      */
     @GetMapping("/waiting")
-    public String waiting() throws InterruptedException {
-        log.info("waiting---流控模式为排队等待 ，时间：" + (new Date()));
-        Thread.sleep(200);
+    public String waiting() {
+       // log.info("waiting---流控模式为排队等待 "  );
+      //  Thread.sleep(10);
         return "ok";
     }
 
